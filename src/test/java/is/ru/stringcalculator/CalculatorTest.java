@@ -32,4 +32,9 @@ public class CalculatorTest {
     public void testNegativeNumbers() {
 	assertEquals(-5, Calculator.add("-1,-4"));
     }
+
+    @Test
+    public void testThreeNumbersWithNewLine() {
+	assertEquals(6, Calculator.add("1\n2,3"));
+    }
 }
