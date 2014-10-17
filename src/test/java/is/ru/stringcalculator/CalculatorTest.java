@@ -45,7 +45,7 @@ public class CalculatorTest {
 
     @Test
     public void testDifferentDelimeters() {
-	assertEquals(5, "//;\n3;2");
-	assertEquals(15, "//&\n5&3&3&4");
+	assertEquals(5, Calculator.add("//;\n3;2"));
+	assertEquals(15, Calculator.add("//&\n5&3&3&4"));
     }
 }

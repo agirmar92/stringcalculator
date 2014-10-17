@@ -6,6 +6,11 @@ public class Calculator {
 		if(text.equals("")){
 			return 0;
 		}
+		else if(text.contains("//")){
+			String delimeter = text.substring(2, text.indexOf('\n'));
+			String restOfNumbers = text.substring(text.indexOf('\n') + 1);
+			return sum(restOfNumbers.split(delimeter));
+		}
 		else if(text.contains(",") || text.contains("\n")){
 			return sum(splitNumbers(text));
 		}
@@ -28,7 +33,4 @@ public class Calculator {
 		}
 		return total;
     	}
-
-
-
 }
