@@ -42,4 +42,10 @@ public class CalculatorTest {
     public void testTwoNumbersWithNewLine() {
 	assertEquals(6, Calculator.add("3\n3"));
     }
+
+    @Test
+    public void testDifferentDelimeters() {
+	assertEquals(5, "//;\n3;2");
+	assertEquals(15, "//&\n5&3&3&4");
+    }
 }
