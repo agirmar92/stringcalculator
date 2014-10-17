@@ -4,9 +4,8 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
 public class CalculatorTest {
-
-	public static void main(String args[]) {
-      org.junit.runner.JUnitCore.main("is.ru.stringcalculator.CalculatorTest");
+    public static void main(String args[]) {
+        org.junit.runner.JUnitCore.main("is.ru.stringcalculator.CalculatorTest");
     }
 
 	@Test
@@ -25,8 +24,11 @@ public class CalculatorTest {
 	}	
 
 	@Test
-    public void testMultipleNumbers(){
-    	assertEquals(6, Calculator.add("1,2,3"));
-    }
-
+ 	public void testMultipleNumbers(){
+    		assertEquals(6, Calculator.add("1,2,3"));
+	}
+	@Test
+	public void testNegativeNumbers(){
+		assertEquals(-5, Calculator.add("-1,-4"));
+	}
 }
