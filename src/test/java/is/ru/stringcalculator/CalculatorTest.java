@@ -50,13 +50,23 @@ public class CalculatorTest {
 
     @Test
     public void testDifferentDelimeters() throws Exception {
-	assertEquals(5, Calculator.add("//;\n3;2"));
 	assertEquals(15, Calculator.add("//&\n5&3&3&4"));
     }
 
     @Test
-    public void ignoreNumbersGreaterThan1000() throws Exception {
-	assertEquals(0, Calculator.add("1001"));
-	assertEquals(2, Calculator.add("1001,2"));
+    public void testDifferentDelimeters2() throws Exception {
+        assertEquals(15, Calculator.add("//&\n5&3&3&4"));
     }
+
+    @Test
+    public void ignoreNumbersGreaterThan1000() throws Exception {
+	assertEquals(2, Calculator.add("1001,2,5040"));
+    }
+
+    @Test
+    public void ignoreNumberGreaterThan1000() throws Exception {
+        assertEquals(0, Calculator.add("1001"));
+    }
+
+
 }
