@@ -15,6 +15,7 @@ public class Calculator {
 			return sum(splitNumbers(text));
 		}
 		else
+			if(toInt(text) < 0) throw new NegativeNumbersException(text);
 			return toInt(text);
 	}
 

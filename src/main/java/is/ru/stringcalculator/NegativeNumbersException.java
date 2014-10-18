@@ -11,5 +11,10 @@ public class NegativeNumbersException extends Exception {
 			}
 			else System.out.print("," + number);
 		}
+		System.out.println();
+	}
+
+	public NegativeNumbersException(String number) {
+		System.out.println("Negatives not allowed: " + number);
 	}
 }

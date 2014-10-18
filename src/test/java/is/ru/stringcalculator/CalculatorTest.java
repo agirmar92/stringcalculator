@@ -16,7 +16,6 @@ public class CalculatorTest {
     @Test
     public void testOneNumber() throws Exception {
 	assertEquals(1, Calculator.add("1"));
-	assertEquals(-4, Calculator.add("-4"));
     }
 
     @Test
@@ -31,7 +30,12 @@ public class CalculatorTest {
 
     @Test(expected = Exception.class)
     public void testNegativeNumbers() throws Exception {
-	assertEquals("Negatives not allowed: -1,-4" ,Calculator.add("-1,3,-4"));
+	assertEquals("Negatives not allowed: -1,-4", Calculator.add("-1,3,-4"));
+    }
+
+    @Test(expected = Exception.class)
+    public void testOneNegativeNumber() throws Exception {
+	assertEquals("Negatives not allowed: -23", Calculator.add("-23"));
     }
 
     @Test
