@@ -14,9 +14,11 @@ public class Calculator {
 		else if(text.contains(",") || text.contains("\n")){
 			return sum(splitNumbers(text));
 		}
-		else
+		else if(toInt(text) <= 1000) {
 			if(toInt(text) < 0) throw new NegativeNumbersException(text);
 			return toInt(text);
+		}
+		else return 0;
 	}
 
 	private static int toInt(String number){
@@ -32,7 +34,7 @@ public class Calculator {
         	for(String number : numbers){
 			int currNumber = toInt(number);
 			if(currNumber < 0) throw new  NegativeNumbersException(numbers);
-			total += toInt(number);
+			if(currNumber <= 1000) total += toInt(number);
 		}
 		return total;
     	}
