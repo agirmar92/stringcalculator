@@ -55,7 +55,7 @@ public class CalculatorTest {
 
     @Test
     public void testDifferentDelimeters2() throws Exception {
-        assertEquals(15, Calculator.add("//&\n5&3&3&4"));
+        assertEquals(15, Calculator.add("//*\n5*3*3*4"));
     }
 
     @Test
@@ -68,5 +68,9 @@ public class CalculatorTest {
         assertEquals(0, Calculator.add("1001"));
     }
 
+    @Test
+    public void delimetersOfAnyLength() throws Exception {
+	assertEquals(6, Calculator.add("//[***]\n1***2***3"));
+    }
 
 }

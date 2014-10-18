@@ -1,5 +1,7 @@
 package is.ru.stringcalculator;
 
+import java.util.regex.*;
+
 public class Calculator {
 
 	public static int add(String text) throws Exception {
@@ -8,8 +10,10 @@ public class Calculator {
 		}
 		else if(text.contains("//")){
 			String delimeter = text.substring(2, text.indexOf('\n'));
+			if(delimeter.length() > 1)
+				delimeter = delimeter.substring(1, delimeter.length() - 1);
 			String restOfNumbers = text.substring(text.indexOf('\n') + 1);
-			return sum(restOfNumbers.split(delimeter));
+			return sum(restOfNumbers.split(Pattern.quote(delimeter)));
 		}
 		else if(text.contains(",") || text.contains("\n")){
 			return sum(splitNumbers(text));
